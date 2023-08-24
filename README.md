@@ -9,6 +9,12 @@ extremely limited in scope currently. Help is welcome to incrementally expand it
 
 You must have a Synapse account and have created a Personal Access Token (PAT). It is recommended that you place this in a `.env` file to keep this secure.
 
+## Installation
+
+```
+npm install synapse-node-api
+```
+
 ### Initialization
 
 ```

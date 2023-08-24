@@ -7,7 +7,7 @@
   },
   "name": "synapse-node-api",
   "description": "Unofficial API client for Sage Bionetwork's Synapse service",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "main": "dist/index.js",
   "scripts": {
     "build": "tsc",
