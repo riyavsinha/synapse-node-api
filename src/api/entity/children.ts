@@ -7,18 +7,18 @@ import { SortBy } from "../../types/sort-by";
 export type EntityChildrenRequest = {
   /** The ID of the parent. Set to null to list projects. */
   parentId: string;
+  /** The types of children to be include. Must include at least one type. */
+  includeTypes: EntityType[];
   /** Optional parameter used to fetch the next page of results. When NULL, the first page will be returned. The nextPageToken is provided with the results if there is another page of results. */
   nextPageToken?: string;
-  /** The types of children to be include. Must include at least one type. */
-  includeTypes?: EntityType[];
   /** How results should be sorted. */
-  sortBy: SortBy;
+  sortBy?: SortBy;
   /** The direction of the result sort. */
-  sortDirection: Direction;
+  sortDirection?: Direction;
   /** When true, the total number of children with the given parentId and types will be included. False by default */
-  includeTotalChildCount: boolean;
+  includeTotalChildCount?: boolean;
   /** When true, the sum of the files sizes (bytes) with the given parentId and types will be included. False by default */
-  includeSumFileSizes: boolean;
+  includeSumFileSizes?: boolean;
 };
 
 export type EntityChildrenResponse = {
