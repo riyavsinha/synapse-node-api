@@ -33,3 +33,4 @@ synapse.entity.children({parentId: 'syn123456', includeTypes: ['folder']})
   - Get Child
 - File:
   - Read contents
+- Search
