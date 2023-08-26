@@ -1,5 +1,5 @@
 import { AxiosInstance } from "axios";
-import { readFileContents } from "./read-file-contents";
+import { readFileContents } from "./read-file-contents.js";
 
 export const file = (client: AxiosInstance) => ({
   /**

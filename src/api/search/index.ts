@@ -1,5 +1,5 @@
 import { AxiosInstance } from "axios";
-import { EntityPath } from "../../types/entity-path";
+import { EntityPath } from "../../types/entity-path.js";
 
 /**
  * Schema for a search query.

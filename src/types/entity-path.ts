@@ -1,4 +1,4 @@
-import { EntityHeader } from "./entity-header";
+import { EntityHeader } from "./entity-header.js";
 
 /**
  * All entities in an Entity's path

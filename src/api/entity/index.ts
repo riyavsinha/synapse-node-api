@@ -1,6 +1,6 @@
 import { AxiosInstance } from "axios";
-import { children } from "./children";
-import { child } from "./child";
+import { children } from "./children.js";
+import { child } from "./child.js";
 
 export const entity = (client: AxiosInstance) => ({
   /**

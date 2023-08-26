@@ -1,9 +1,9 @@
 import axios, { AxiosInstance } from "axios";
-import { entity } from "./api/entity";
-import { file } from "./api/file";
-import { search } from "./api/search";
+import { file } from "./api/file/index.js";
+import { search } from "./api/search/index.js";
+import { entity } from "./api/entity/index.js";
 
-class SynapseClient {
+export class SynapseClient {
   private client: AxiosInstance;
 
   public entity: ReturnType<typeof entity>;
@@ -25,5 +25,3 @@ class SynapseClient {
     this.search = search(this.client);
   }
 }
-
-export default SynapseClient;

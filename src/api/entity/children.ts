@@ -1,8 +1,8 @@
 import { AxiosInstance } from "axios";
-import { Direction } from "../../types/direction";
-import { EntityHeader } from "../../types/entity-header";
-import { EntityType } from "../../types/entity-type";
-import { SortBy } from "../../types/sort-by";
+import { Direction } from "../../types/direction.js";
+import { EntityHeader } from "../../types/entity-header.js";
+import { EntityType } from "../../types/entity-type.js";
+import { SortBy } from "../../types/sort-by.js";
 
 export type EntityChildrenRequest = {
   /** The ID of the parent. Set to null to list projects. */
