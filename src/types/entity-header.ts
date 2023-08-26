@@ -1,14 +1,14 @@
 export type EntityHeader = {
   /** The name of the entity */
-  name: String;
+  name: string;
   /** The ID of the entity */
-  id: String;
+  id: string;
   /** The type of the entity */
-  type: String;
+  type: string;
   /** The version number of this entity */
   versionNumber: number;
   /** The user defined version label of the entity */
-  versionLabel: String;
+  versionLabel: string;
   /** If this version is the latest version of the entity */
   isLatestVersion: boolean;
   /** The ID of the entity that this Entity's ACL is inherited from */
