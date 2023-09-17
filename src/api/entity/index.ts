@@ -1,5 +1,5 @@
 import { AxiosInstance } from "axios";
-import { children } from "./children.js";
+import { allChildren, children } from "./children.js";
 import { child } from "./child.js";
 
 export const entity = (client: AxiosInstance) => ({
@@ -9,6 +9,11 @@ export const entity = (client: AxiosInstance) => ({
    * @link https://rest-docs.synapse.org/rest/POST/entity/children.html
    */
   children: children(client),
+  /**
+   * Non-native convenience method. Gets all children for a given parent ID by
+   * traversing all pages of results.
+   */
+  allChildren: allChildren(client),
   /**
    * Retrieve an entityId for a given parent ID and entity name. This service can also be used to lookup projectId by setting the parentId to NULL in EntityLookupRequest.
    *

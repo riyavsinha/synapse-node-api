@@ -21,6 +21,11 @@ export type EntityChildrenRequest = {
   includeSumFileSizes?: boolean;
 };
 
+export type AllEntityChildrenRequest = Pick<
+  EntityChildrenRequest,
+  "parentId" | "includeTypes" | "sortBy" | "sortDirection"
+>;
+
 export type EntityChildrenResponse = {
   /** The headers of each child. */
   page: EntityHeader[];
@@ -32,6 +37,11 @@ export type EntityChildrenResponse = {
   sumFileSizes?: number;
 };
 
+/**
+ * Native REST API method. Using this will return the raw response from the Synapse REST API, and allows custom page traversal.
+ *
+ * @link https://rest-docs.synapse.org/rest/POST/entity/children.html
+ */
 export const children =
   (client: AxiosInstance) =>
   async (request: EntityChildrenRequest): Promise<EntityChildrenResponse> => {
@@ -45,4 +55,24 @@ export const children =
       console.error("Error getting entity children:", error);
       throw error;
     }
+  };
+
+/**
+ * A convenience method that will return all children of a given parent. This will make multiple requests to the Synapse REST API to get all pages of results.
+ */
+export const allChildren =
+  (client: AxiosInstance) =>
+  async (request: AllEntityChildrenRequest): Promise<EntityHeader[]> => {
+    const childrenFn = children(client);
+    const responses = [];
+    let curResponse = await childrenFn(request);
+    responses.push(curResponse);
+    while (curResponse.nextPageToken) {
+      curResponse = await childrenFn({
+        ...request,
+        nextPageToken: curResponse.nextPageToken,
+      });
+      responses.push(curResponse);
+    }
+    return responses.flatMap((response) => response.page);
   };
